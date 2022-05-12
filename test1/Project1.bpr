@@ -12,7 +12,8 @@
     <RESDEPEN value="$(RESFILES) Unit1.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value=""/>
-    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib adortl.lib dsnap.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib adortl.lib dsnap.lib qrpt.lib vclx.lib 
+      bdertl.lib bcb2kaxserver.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
       vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
       teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
