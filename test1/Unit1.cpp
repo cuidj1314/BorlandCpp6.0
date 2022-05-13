@@ -30,18 +30,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::BtnFristClick(TObject *Sender)
-{
-    customer->Close();
-    customer->Open();
-    customer->First();
-    // 文本框数据表示
-    ShowData();
-    customer->Close();
-}
-//---------------------------------------------------------------------------
-
 void TForm1::ShowData(){
+
+    // 数据表示
+    customer->Open();
     edtC_Id->Text=customer->FieldValues["C_ID"];
     edtC_Name->Text=customer->FieldValues["C_NAME"];
     edtC_Sex->Text=customer->FieldValues["C_SEX"];
@@ -79,7 +71,6 @@ void TForm1::ListDataShow(){
     ListView1->ReadOnly=true;
     customer->Close();
     customer->Open();
-    
     // 添加数据
     while(!customer->Eof){
         TListItem *li = ListView1->Items->Add();
@@ -102,6 +93,17 @@ void TForm1::ListDataShow(){
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::BtnFristClick(TObject *Sender)
+{
+    customer->Close();
+    customer->Open();
+    customer->First();
+    // 文本框数据表示
+    ShowData();
+    customer->Close();
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TForm1::BtnNextClick(TObject *Sender)
 {
     customer->Open();
@@ -120,7 +122,6 @@ void __fastcall TForm1::BtnPriorClick(TObject *Sender)
 
 void __fastcall TForm1::BtnChangeClick(TObject *Sender)
 {
-    
     if(MessageBox(NULL,"确认信息无误","确认",33)==IDOK){
         customer->Edit();
         customer->FieldValues["C_ID"]=edtC_Id->Text;
@@ -132,13 +133,13 @@ void __fastcall TForm1::BtnChangeClick(TObject *Sender)
         BtnChange->Caption="修改";
         ListDataShow();
     }
-
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::BtnDeleteClick(TObject *Sender)
 {
     if(MessageBox(NULL,"确认删除","警告",49)==IDOK){
+        customer->Open();
         customer->Delete();
         ListDataShow();
     }
