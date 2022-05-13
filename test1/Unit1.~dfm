@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 201
-  Top = 136
+  Left = 544
+  Top = 301
   Width = 979
   Height = 602
   Caption = 'Form1'
@@ -217,6 +217,15 @@ object Form1: TForm1
     Caption = #36873#20013#35813#34892
     TabOrder = 14
     OnClick = BtnSelectClick
+  end
+  object BtnPrivew: TButton
+    Left = 856
+    Top = 160
+    Width = 80
+    Height = 33
+    Caption = #25171#21360#39044#35272
+    TabOrder = 15
+    OnClick = BtnPrivewClick
   end
   object Conn: TADOConnection
     Connected = True

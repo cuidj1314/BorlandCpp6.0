@@ -120,6 +120,7 @@ void __fastcall TForm1::BtnPriorClick(TObject *Sender)
 
 void __fastcall TForm1::BtnChangeClick(TObject *Sender)
 {
+    
     if(MessageBox(NULL,"确认信息无误","确认",33)==IDOK){
         customer->Edit();
         customer->FieldValues["C_ID"]=edtC_Id->Text;
@@ -129,15 +130,15 @@ void __fastcall TForm1::BtnChangeClick(TObject *Sender)
         customer->Post();
         ShowData();
         BtnChange->Caption="修改";
-        ListDataShow();        
+        ListDataShow();
     }
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::BtnDeleteClick(TObject *Sender)
 {
     if(MessageBox(NULL,"确认删除","警告",49)==IDOK){
-        customer->Open();
         customer->Delete();
         ListDataShow();
     }
@@ -200,3 +201,12 @@ void __fastcall TForm1::BtnExitClick(TObject *Sender)
     Close();
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::BtnPrivewClick(TObject *Sender)
+{
+        if(customer->Active==false){
+            customer->Active=true;
+            Form2->QuickRep1->PreviewModal();
+        }
+}
+//---------------------------------------------------------------------------
+

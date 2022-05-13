@@ -16,6 +16,7 @@
 #include <QuickRpt.hpp>
 #include "Word_2K_SRVR.h"
 #include <OleServer.hpp>
+#include "Report.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -42,6 +43,7 @@ __published:	// IDE-managed Components
         TButton *BtnEnd;
         TButton *BtnExit;
         TButton *BtnSelect;
+        TButton *BtnPrivew;
         void __fastcall BtnFristClick(TObject *Sender);
         void __fastcall BtnNextClick(TObject *Sender);
         void __fastcall BtnPriorClick(TObject *Sender);
@@ -52,6 +54,7 @@ __published:	// IDE-managed Components
         void __fastcall BtnEndClick(TObject *Sender);
         void __fastcall BtnSelectClick(TObject *Sender);
         void __fastcall BtnExitClick(TObject *Sender);
+        void __fastcall BtnPrivewClick(TObject *Sender);
 private:	// User declarations
         void ShowData();
         void ListTitleCreat();
